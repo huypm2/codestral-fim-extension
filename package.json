@@ -1,0 +1,72 @@
+{
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "codestralFim.toggle",
+        "title": "Codestral FIM: Toggle Enabled"
+      }
+    ],
+    "configuration": {
+      "properties": {
+        "codestralFim.apiKey": {
+          "default": "",
+          "description": "Codestral API key (or set CODESTRAL_API_KEY env var).",
+          "type": "string"
+        },
+        "codestralFim.debounceMs": {
+          "default": 300,
+          "description": "Wait this many ms after the last keystroke before calling the API.",
+          "type": "number"
+        },
+        "codestralFim.enabled": {
+          "default": true,
+          "description": "Enable Codestral FIM inline completions.",
+          "type": "boolean"
+        },
+        "codestralFim.fileExtensions": {
+          "default": [
+            "js",
+            "jsx",
+            "mjs",
+            "cjs",
+            "ts",
+            "tsx",
+            "go",
+            "py",
+            "pyi"
+          ],
+          "description": "Only trigger completions for files with these extensions (without dots, e.g. [\"js\", \"ts\", \"py\"]). Empty array = all files.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "codestralFim.maxTokens": {
+          "default": 128,
+          "type": "number"
+        },
+        "codestralFim.model": {
+          "default": "codestral-latest",
+          "type": "string"
+        },
+        "codestralFim.temperature": {
+          "default": 0.2,
+          "type": "number"
+        }
+      },
+      "title": "Codestral FIM"
+    }
+  },
+  "description": "Minimal Fill-in-the-Middle inline completions via Codestral",
+  "displayName": "Codestral FIM",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "main": "./extension.js",
+  "name": "codestral-fim",
+  "publisher": "you",
+  "version": "0.0.1"
+}
