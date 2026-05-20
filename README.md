@@ -5,7 +5,23 @@ Tiny VSCode extension that uses Codestral's fill-in-the-middle endpoint for inli
 ## Setup
 
 1. Get an API key from https://console.mistral.ai
-2. Open this folder in VSCode and press **F5** to launch an Extension Development Host. Or to install permanently: copy the folder to `~/.vscode/extensions/codestral-fim-0.0.1/`.
+2. Open this folder in VSCode and press **F5** to launch an Extension Development Host. To install permanently, package and install via the CLI:
+
+   ```
+   npx --yes @vscode/vsce package --allow-missing-repository --skip-license
+   code --install-extension codestral-fim-0.0.1.vsix
+   ```
+
+   If you use a custom VSCode **profile**, pass it explicitly — otherwise the extension installs into the default profile and won't show up:
+
+   ```
+   code --profile <profile-name> --install-extension codestral-fim-0.0.1.vsix
+   ```
+
+   Or use the GUI: Extensions view → `...` menu → **Install from VSIX...** (this targets the active profile).
+
+   Avoid copying the folder into `~/.vscode/extensions/` directly — it doesn't register with profile-aware installs and tends to leave stale entries that block later CLI installs.
+
 3. Set the key in **Settings → Codestral FIM → API Key**, or export `CODESTRAL_API_KEY` before launching VSCode.
 
 ## How it works

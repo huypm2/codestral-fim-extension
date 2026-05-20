@@ -65,8 +65,9 @@
   "engines": {
     "vscode": "^1.85.0"
   },
+  "icon": "icon.png",
   "main": "./extension.js",
   "name": "codestral-fim",
-  "publisher": "you",
+  "publisher": "huypm2",
   "version": "0.0.1"
 }
